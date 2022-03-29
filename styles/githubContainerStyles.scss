@@ -26,6 +26,27 @@ $background-color-primary: aquamarine;
 
 .repositories {
   grid-area: repositories;
+  margin-left: 50px;
+  min-width: 450px;
+
+  .item {
+    border-bottom: 1px solid #444;
+    list-style: none;
+    margin-bottom: 10px;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      text-decoration: none;
+      color: #000;
+      &:hover {
+        color: #0088ff;
+      }
+    }
+  }
 }
 
 .commits {

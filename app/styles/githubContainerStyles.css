@@ -19,6 +19,24 @@
 
 .repositories {
   grid-area: repositories;
+  margin-left: 50px;
+  min-width: 450px;
+}
+.repositories .item {
+  border-bottom: 1px solid #444;
+  list-style: none;
+  margin-bottom: 10px;
+}
+.repositories .info {
+  display: flex;
+  justify-content: space-between;
+}
+.repositories .info a {
+  text-decoration: none;
+  color: #000;
+}
+.repositories .info a:hover {
+  color: #0088ff;
 }
 
 .commits {

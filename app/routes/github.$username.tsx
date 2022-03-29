@@ -6,6 +6,7 @@ import githubContainerStyles from "~/styles/githubContainerStyles.css";
 export const loader: LoaderFunction = async ({ params }) => {
   return {
     user: await GithubApi.getGithubUser(params.username),
+    repos: await GithubApi.getGithubRepos(params.username),
   };
 };
 
@@ -21,7 +22,7 @@ export const links: LinksFunction = () => {
   ];
 };
 export default function () {
-  const { user } = useLoaderData<LoadData>();
+  const { user, repos } = useLoaderData<LoadData>();
 
-  return <GithubContainer user={user} />;
+  return <GithubContainer user={user} repos={repos} />;
 }
