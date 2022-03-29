@@ -6,12 +6,16 @@ export interface GithubContainerProps {
 
 export function GithubContainer({ user }: GithubContainerProps) {
   return (
-    <header className="header">
-      <h1>{user.login}</h1>
-      <h2>{user.bio}</h2>
-      <img src={user.avatar_url} alt={user.login} width="150" />
+    <div className="container">
+      <header className="profile">
+        <img src={user.avatar_url} alt={user.login} />
+        <h3>{user.login}</h3>
+      </header>
+      <main className="repositories">Repos</main>
+      <aside className="commits">Commits</aside>
+
       <hr />
       <Outlet />
-    </header>
+    </div>
   );
 }

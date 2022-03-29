@@ -4,8 +4,9 @@
   box-sizing: border-box;
 }
 
-html {
+body {
   background-color: #888;
+  height: 100vh;
 }
 
 /*# sourceMappingURL=reset.css.map */

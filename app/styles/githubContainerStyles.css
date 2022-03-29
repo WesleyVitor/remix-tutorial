@@ -1,6 +1,28 @@
-.header {
-  min-width: 100%;
-  background-color: aquamarine;
+.container {
+  display: grid;
+  grid-template-areas: "profile profile profile" "repositories repositories commits" "repositories repositories commits";
+  grid-template-rows: 15% 1fr 10%;
+  grid-template-columns: 10% 1fr 30%;
+  height: 100vh;
+}
+
+.profile {
+  grid-area: profile;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.profile img {
+  width: 50px;
+  margin: 0 5px;
+}
+
+.repositories {
+  grid-area: repositories;
+}
+
+.commits {
+  grid-area: commits;
 }
 
 /*# sourceMappingURL=githubContainerStyles.css.map */
