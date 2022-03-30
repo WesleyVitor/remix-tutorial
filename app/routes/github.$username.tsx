@@ -1,6 +1,6 @@
 import { LoaderFunction, useLoaderData } from "remix";
 import type { LinksFunction } from "remix";
-import { GithubApi, LoadData, GithubContainer } from "~/features/github";
+import { GithubApi, Types, Repositories } from "~/features/github";
 import githubContainerStyles from "~/styles/githubContainerStyles.css";
 
 export const loader: LoaderFunction = async ({ params }) => {
@@ -22,7 +22,7 @@ export const links: LinksFunction = () => {
   ];
 };
 export default function () {
-  const { user, repos } = useLoaderData<LoadData>();
+  const { user, repos } = useLoaderData<Types.Repositories.LoadData>();
 
-  return <GithubContainer user={user} repos={repos} />;
+  return <Repositories user={user} repos={repos} />;
 }
