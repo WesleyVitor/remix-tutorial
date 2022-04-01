@@ -19,3 +19,23 @@ export namespace Repositories {
     repos: Repo[];
   }
 }
+
+export namespace Commits {
+  export interface apiResponse {
+    sha: string;
+    commit: {
+      message: string;
+    };
+    html_url: string;
+  }
+
+  export interface Commit {
+    sha: string;
+    message: string;
+    html_url: string;
+  }
+  export interface LoadData {
+    user: User;
+    commits: Commit[];
+  }
+}

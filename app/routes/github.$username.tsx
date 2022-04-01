@@ -1,7 +1,7 @@
 import { LoaderFunction, useLoaderData } from "remix";
 import type { LinksFunction } from "remix";
 import { GithubApi, Types, Repositories } from "~/features/github";
-import githubContainerStyles from "~/styles/githubContainerStyles.css";
+import repositoriesStyles from "~/styles/repositoriesStyles.css";
 
 export const loader: LoaderFunction = async ({ params }) => {
   return {
@@ -17,7 +17,7 @@ export const links: LinksFunction = () => {
   return [
     {
       rel: "stylesheet",
-      href: githubContainerStyles,
+      href: repositoriesStyles,
     },
   ];
 };

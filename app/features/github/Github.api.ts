@@ -1,6 +1,6 @@
 import invariant from "tiny-invariant";
 import pick from "lodash/pick";
-import { Repositories } from "./Github.types";
+import { Repositories, Commits } from "./Github.types";
 import "dotenv/config";
 
 const config = {
@@ -32,7 +32,10 @@ export const getGithubRepos = async (username?: string) => {
   );
 };
 
-export const getCommits = async (reponame?: string, username?: string) => {
+export const getCommits = async (
+  reponame?: string,
+  username?: string
+): Promise<Commits.Commit[]> => {
   invariant(reponame, "Please provide an repo name as a string");
   invariant(username, "Please provide an user name as a string");
 
@@ -41,5 +44,9 @@ export const getCommits = async (reponame?: string, username?: string) => {
     config
   );
 
-  return await res.json();
+  return (await res.json()).map((commit: Commits.apiResponse) => ({
+    sha: commit.sha,
+    message: commit.commit.message,
+    html_url: commit.html_url,
+  }));
 };

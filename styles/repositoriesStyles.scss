@@ -1,4 +1,11 @@
 $background-color-primary: aquamarine;
+
+@mixin responsive {
+  @media (max-width: 783px) {
+    flex-direction: column;
+  }
+}
+
 .container {
   display: grid;
   grid-template-areas:
@@ -38,7 +45,7 @@ $background-color-primary: aquamarine;
   .info {
     display: flex;
     justify-content: space-between;
-
+    @include responsive;
     a {
       text-decoration: none;
       color: #000;

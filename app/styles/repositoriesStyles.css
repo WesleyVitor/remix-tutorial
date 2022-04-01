@@ -31,6 +31,11 @@
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 783px) {
+  .repositories .info {
+    flex-direction: column;
+  }
+}
 .repositories .info a {
   text-decoration: none;
   color: #000;
@@ -43,4 +48,4 @@
   grid-area: commits;
 }
 
-/*# sourceMappingURL=githubContainerStyles.css.map */
+/*# sourceMappingURL=repositoriesStyles.css.map */

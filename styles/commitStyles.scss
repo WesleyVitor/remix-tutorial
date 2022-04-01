@@ -1,0 +1,15 @@
+.listCommits {
+  margin-left: 10px;
+
+  li {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-bottom: 10px;
+  }
+}
+.avatarCommit {
+  width: 40px;
+  border: 1px solid #555;
+  border-radius: 30px;
+}
